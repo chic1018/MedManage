@@ -2,7 +2,10 @@
     <form action="" class="login-form" @submit.prevent="handleSubmit">
         <label for="username">用户名</label>
         <input type="text" name="username" id="username" />
-        <label for="password">密码</label>
+        <div>
+            <label for="password">密码</label>
+            <router-link to="/password_reset">忘记密码？</router-link>
+        </div>
         <input type="password" name="password" id="password" />
         <input type="submit" id="submit" value="登 录" />
     </form>
@@ -18,7 +21,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 form {
     text-align: left;
 }
@@ -64,5 +67,16 @@ input:focus {
     cursor: pointer;
     line-height: 20px;
     font-weight: 500;
+}
+
+div a {
+    float: right;
+    color: #0969da;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+div a:hover {
+    text-decoration: underline;
 }
 </style>

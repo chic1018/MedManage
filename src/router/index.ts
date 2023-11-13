@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+// import HomeView from '../views/HomeView.vue';
 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         name: 'home',
-        component: HomeView
+        redirect: '/login'
+        // component: HomeView
     },
     {
         path: '/login',
@@ -13,14 +14,19 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/LoginView.vue')
     },
     {
-        path: '/patients',
-        name: 'patient-dashboard',
-        component: () => import('../views/LoginView.vue')
+        path: '/about',
+        name: 'about',
+        component: () => import('../views/AboutView.vue')
     },
     {
         path: '/doctors',
         name: 'doctor-dashboard',
-        component: () => import('../views/LoginView.vue')
+        component: () => import('../views/DoctorDashboard.vue')
+    },
+    {
+        path: '/patients',
+        name: 'patient-dashboard',
+        component: () => import('../views/PatientDashboard.vue')
     },
     {
         path: '/:pathMatch(.*)*',
